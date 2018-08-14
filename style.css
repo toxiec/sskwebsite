@@ -1,0 +1,210 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+
+body,
+html {
+  font-family: 'Anonymous Pro', monospace;
+  height: calc(100vh - 8em);
+  color: rgba(255, 255, 255, .75);
+  background-color: rgb(25, 25, 25);
+}
+
+.cards-style {
+  margin-top: 50px;
+}
+
+/* Create a Parallax Effect */
+
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+
+.bgimg-1 {
+  background-image: url('pictures/firstPicture.png');
+  min-height: 115%;
+}
+
+/* Second image (Portfolio) */
+
+.bgimg-2 {
+  background-image: url("pictures/thirdPicture.jpg");
+  min-height: 400px;
+}
+
+
+.w3-wide {
+  letter-spacing: 10px;
+}
+
+.w3-hover-opacity {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* to get pictures in a row */
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* Clearfix (clear floats) */
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1,
+  .bgimg-2,
+  .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+
+/* Google Fonts */
+
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+.line-1 {
+  position: relative;
+  top: 50%;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(70, 255, 255, .100);
+  font-size: 300%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 24em;
+  }
+}
+
+.hovereffect {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.hovereffect .overlay {
+  position: absolute;
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+}
+
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.hovereffect:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  background-color: transparent;
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+
+.hovereffect a,
+.hovereffect p {
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+
+.hovereffect:hover a,
+.hovereffect:hover p,
+.hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
